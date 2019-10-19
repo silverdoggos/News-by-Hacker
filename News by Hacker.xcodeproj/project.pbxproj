@@ -13,6 +13,10 @@
 		869E0DF4235A09100048C61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869E0DF3235A09100048C61F /* Assets.xcassets */; };
 		869E0DF7235A09100048C61F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869E0DF6235A09100048C61F /* Preview Assets.xcassets */; };
 		869E0DFA235A09100048C61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869E0DF8235A09100048C61F /* LaunchScreen.storyboard */; };
+		869E0E05235A0ED90048C61F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E0E04235A0ED90048C61F /* NetworkManager.swift */; };
+		869E0E07235A105C0048C61F /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E0E06235A105C0048C61F /* PostData.swift */; };
+		869E0E09235A1BF20048C61F /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E0E08235A1BF20048C61F /* Detail.swift */; };
+		869E0E0D235A22E90048C61F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E0E0C235A22E90048C61F /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		869E0DF6235A09100048C61F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		869E0DF9235A09100048C61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		869E0DFB235A09100048C61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		869E0E04235A0ED90048C61F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		869E0E06235A105C0048C61F /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		869E0E08235A1BF20048C61F /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		869E0E0B235A203D0048C61F /* News by Hacker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "News by Hacker.entitlements"; sourceTree = "<group>"; };
+		869E0E0C235A22E90048C61F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +65,11 @@
 		869E0DEC235A090D0048C61F /* News by Hacker */ = {
 			isa = PBXGroup;
 			children = (
+				869E0E0B235A203D0048C61F /* News by Hacker.entitlements */,
 				869E0DED235A090D0048C61F /* AppDelegate.swift */,
 				869E0DEF235A090D0048C61F /* SceneDelegate.swift */,
-				869E0DF1235A090D0048C61F /* ContentView.swift */,
+				869E0E0A235A1E8C0048C61F /* View */,
+				869E0E03235A0E8C0048C61F /* Module */,
 				869E0DF3235A09100048C61F /* Assets.xcassets */,
 				869E0DF8235A09100048C61F /* LaunchScreen.storyboard */,
 				869E0DFB235A09100048C61F /* Info.plist */,
@@ -73,6 +84,25 @@
 				869E0DF6235A09100048C61F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		869E0E03235A0E8C0048C61F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				869E0E04235A0ED90048C61F /* NetworkManager.swift */,
+				869E0E06235A105C0048C61F /* PostData.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		869E0E0A235A1E8C0048C61F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				869E0DF1235A090D0048C61F /* ContentView.swift */,
+				869E0E08235A1BF20048C61F /* Detail.swift */,
+				869E0E0C235A22E90048C61F /* WebView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869E0E07235A105C0048C61F /* PostData.swift in Sources */,
+				869E0E05235A0ED90048C61F /* NetworkManager.swift in Sources */,
+				869E0E09235A1BF20048C61F /* Detail.swift in Sources */,
 				869E0DEE235A090D0048C61F /* AppDelegate.swift in Sources */,
 				869E0DF0235A090D0048C61F /* SceneDelegate.swift in Sources */,
 				869E0DF2235A090D0048C61F /* ContentView.swift in Sources */,
+				869E0E0D235A22E90048C61F /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +318,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "News by Hacker/News by Hacker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"News by Hacker/Preview Content\"";
 				DEVELOPMENT_TEAM = X63B5429QJ;
 				ENABLE_PREVIEWS = YES;
@@ -295,6 +331,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shishkinartem.News-by-Hacker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,7 +341,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "News by Hacker/News by Hacker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"News by Hacker/Preview Content\"";
 				DEVELOPMENT_TEAM = X63B5429QJ;
 				ENABLE_PREVIEWS = YES;
@@ -315,6 +354,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.shishkinartem.News-by-Hacker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

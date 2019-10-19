@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Detail.swift
 //  News by Hacker
 //
 //  Created by Артём Шишкин on 18.10.2019.
@@ -8,14 +8,20 @@
 
 import SwiftUI
 
-struct ContentView: View {
+
+struct Detail: View {
+    let url: String?
     var body: some View {
-        Text("Hello World")
+        WebView(urlString: url)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Detail_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Detail(url: "google.com")
     }
 }
+
+
+
+
